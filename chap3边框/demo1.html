@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>边框案例1</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border-width: 10px;
+			border-color:tan;
+			margin-bottom: 5px;
+		}
+		.div1{
+			border-style: solid dashed inset double;
+		}
+		.div2{
+			border-style: inset;
+			/*inset : 　根据border-color的值画3D凹边*/
+		}
+		.div3{
+			border-style: outset;
+			/*outset : 　根据border-color的值画3D凸边*/
+		}
+		.div4{
+			border-style: groove;
+			/*groove : 　根据border-color的值画3D凹槽*/
+		}
+		.div5{
+			border-style: ridge;
+			/*ridge : 　根据border-color的值画菱形边框*/
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">啊时代发生的发的</div>
+	<div class="div2">div2</div>
+	<div class="div3">div3</div>
+	<div class="div4">div4</div>
+	<div class="div5">div5</div>
+</body>
+</html>
