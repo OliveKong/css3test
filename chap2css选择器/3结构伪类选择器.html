@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>结构伪类选择器</title>
+	<style type="text/css">
+		div p:first-child{
+			background: tan;
+		}
+		/*:nth-child(n)，:nth-child(2n+1)等结构，n从1开始，而非0*/
+		div p:nth-child(2){
+			background:green;
+		}
+		div:root{
+			font-size: 20px;
+			background:pink;
+		}
+		div p:nth-last-child(2){
+			background: pink;
+		}
+		span:nth-of-type(3){
+			background: blue;
+		}
+		p:empty{
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+		}
+		/*E:only-of-type 选择父元素只包含一个同类型的子元素，且该子元素匹配E元素*/
+		span:only-of-type{
+			background: purple;
+		}
+		span:nth-child(1){
+			background: olive
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>单独的p标签，里面不含任何标签</p>
+		<p>
+			<span>span标签1</span>
+			<span>span标签2</span>
+			<span>span标签3</span>
+		</p>
+		<p>只包含一个span标签的p标签
+			<span>span标签</span>
+		</p>
+		<p>
+			<span>一个span标签</span>
+			<b>一个b标签</b>
+		</p>
+		<p></p>
+	</div>
+</body>
+</html>
