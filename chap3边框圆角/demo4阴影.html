@@ -2,9 +2,171 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>box-shadow制作立体导航以及box-shadow属性展示</title>
+	<style type="text/css">
+		.redBorder{
+			margin:10px;
+			border-radius: 10px;
+			border:1px solid red;
+		}
+		.box-shadow{
+			width: 200px;
+			height: 200px;
+			box-shadow: 0px 0px 1px #333;
+		}
+		.box-shadow1{
+			width: 200px;
+			height: 100px;
+			box-shadow:  0 0 10px #000;
+		}
+		.box-shadow2{
+			width:200px;
+			height: 100px;
+			box-shadow:0 0 10px 10px #000;//第四位是扩展半径，扩展半径可以控制阴影深度，如果取负值，可以向内压缩阴影，直到扩展半径等于模糊半径时，阴影会完全消失
+		}
+		.box-shadow3{
+			width:200px;
+			height: 100px;
+			box-shadow: 0 0 10px -5px #000;
+		}
+		.box-shadow4{
+			width:200px;
+			height: 100px;
+			box-shadow: 0 0 10px -10px #000;
+		}
+		.box-shadow5{
+			width: 200px;
+			height: 100px;
+			box-shadow: 0 0 0 10px #000;//只设置扩展半径
+		}
+		.box-shadow5-border{
+			width: 200px;
+			height: 100px;
+			border:10px solid #000;
+		}
+		.box-shadow6{
+			width: 200px;
+			height: 100px;
+			box-shadow: inset 3px 3px 3px #000;//内置阴影
+		}
+		/* 多层阴影 */
+		.box-shadow7{
+			width: 200px;
+			height: 100px;
+			box-shadow: 0 0 1px #000,
+						0 0 5px green,
+						0 0 7px blue,
+						0 0 9px red,
+						0 0 11px purple,
+						0 0 20px skyblue;
+		}
+		/*  */
+		#form-wrapper{
+			width: 450px;
+			padding:8px;
+			margin:20px;
+			overflow: hidden;/*清除浮动*/
+			/*设置表单边框效果*/
+			border-width: 1px;
+			border-style: solid;
+			border-color: #dedede #bababa #aaa #bababa;
+			/*最为关键的代码，制作表单3d立体效果*/
+			box-shadow: 0 3px 3px rgba(255,255,255,0.1),
+						0 3px 0 #bbb,
+						0 4px 0 #aaa,
+						0 5px 5px #444;
+			/*设置圆角*/
+			border-radius: 10px;
+			/*使用渐变制作表单的渐变背景图片*/
+			background-color: #f6f6f6;
+			background-image: -webkit-gradient(linear,left top,left bottom, from(#f6f6f6),to(#eae8e8));
+			background-image: -webkit-linear-gradient(top,#f6f6f6,#eae8e8);
+			background-image: -moz-linear-gradient(top,#f6f6f6,#eae8e8);
+			background-image: -ms-linear-gradient(top,#f6f6f6,#eae8e8);
+			background-image: -o-linear-gradient(top,#f6f6f6,#eae8e8);
+			background-image: linear-gradient(top,#f6f6f6,#eae8e8);
+		}
+		/*输入框样式效果*/
+		input.search{
+			float: left;
+			width: 330px;
+			height: 20px;
+			padding:10px 5px;
+			font:bold 16px 'lucida sans','trebuchet MS','Tahoma';
+			border:1px solid #ccc;
+			box-shadow: 0 1px 1px #ddd inset,0 1px 0 #fff; /*多阴影效果*/
+			border-radius: 3px;
+		}
+		/*输入框得到焦点时样式*/
+		#form-wrapper .search:focus{
+			outline: none;
+			border-color: #aaa;
+			box-shadow: 0 1px 1px #bbb inset;
+		}
+		#form-wrapper .search::-webkit-input-placeholder,
+		#form-wrapper .search::-moz-placeholder,
+		#form-wrapper .search::-ms-input-placeholder{
+			color: red;
+			font-weight: normal;
+		}
+		/*搜索按钮效果*/
+		#form-wrapper .btn{
+			float: right;
+			width: 100px;
+			height: 42px;
+			border:1px solid #00748f;
+			padding: 0;
+			cursor: pointer;
+			border-radius: 3px;
+			color: #fafafa;
+			background-color: #0483a0;
+			background-image: -webkit-gradient( linear, left top, left bottom,from(#31b2c3),to(#0483a0));
+			background-image: -webkit-linear-gradient(top,#31b2c3,#0483a0);
+			background-image: -moz-linear-gradient(top,#31b2c3,#0483a0);
+			background-image: -ms-linear-gradient(top,#31b2c3,#0483a0);
+			background-image: -o-linear-gradient(top,#31b2c3,#0483a0);
+			background-image: linear-gradient(top,#31b2c3,#0483a0);
+		}
+		/* 按钮悬浮状态或获取焦点状态 */
+		#form-wrapper .btn:hover,
+		#form-wrapper .btn:focus{
+			background-color: #31b2c3;
+			background-image: -webkit-gradient( linear, left top, left bottom,from(#0483a0),to(#31b2c3));
+			background-image: -webkit-linear-gradient(top,#0483a0,#31b2c3);
+			background-image: -moz-linear-gradient(top,#0483a0,#31b2c3);
+			background-image: -ms-linear-gradient(top,#0483a0,#31b2c3);
+			background-image: -o-linear-gradient(top,#0483a0,#31b2c3);
+			background-image: linear-gradient(top,#0483a0,#31b2c3);
+		}
+		/*按钮点击时效果*/
+		#form-wrapper .btn:active{
+			outline: none;
+			box-shadow: 0 1px 4px rgba(0,0,0,0.5) inset;
+		}
+		/*firefox下按钮除去焦点线*/
+		#form-wrapper .btn::-moz-focus-inner{
+			border:0;
+		}
+	</style>
 </head>
 <body>
-	
+	<!-- 制作3D搜索表单 -->
+	<form id="form-wrapper">
+		<div class="form-filed clearfix">
+			<input type="text" required="" placeholder="search for css3" class="search">
+			<input type="submit" class="btn submit" value="Go">
+		</div>
+	</form>
+	<div class="redBorder box-shadow"></div>
+	<div class="redBorder box-shadow1"></div>
+	<div class="redBorder box-shadow2"></div>
+	<div class="redBorder box-shadow3"></div>
+	<div class="redBorder box-shadow4"></div>
+	<div class="redBorder box-shadow5">阴影扩展半径模拟边框效果</div>
+	<div class="redBorder box-shadow5-border">边框效果</div>
+	<div class="redBorder box-shadow6"></div>
+	<div class="redBorder box-shadow7">多层阴影</div>
+	<div class="redBorder box-shadow8"></div>
+	<div class="redBorder box-shadow9"></div>
 </body>
 </html>
