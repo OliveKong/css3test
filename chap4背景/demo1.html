@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>background-attachment</title>
+	<style type="text/css">
+		body{
+			overflow-x: hidden;
+			background: url(../img/1.jpg) no-repeat;
+			background-attachment: fixed;/*设置为scroll的时候随滚动轴滚动，设置为fixed的时候不滚动，一般用在html或者body标签上*/
+		}
+		.div1{
+			width: 100%;
+			height: 10000px;
+		}
+		.div2{
+			width: 200px;
+			height: 100px;
+			padding:30px;
+			border: 20px solid rgba(255,0,255,0.3);
+			background-image: url(../img/2.png);
+			background-repeat: no-repeat;
+			/* border-box 从边框边缘开始显示 */
+			/*-webkit-background-origin: borde-boxr;
+			background-origin: border-box;*/
+			/*padding-box 从padding边缘开始显示，包含padding*/
+			/*-webkit-background-origin: padding-box;
+			background-origin: padding-box;*/
+			/*content-box 从padding内边缘开始显示，不包含padding*/
+			/*-webkit-background-origin: content-box;
+			background-origin: content-box;*/
+
+			/* background-clip背景裁切 */
+			/* padding-box 在padding的外边缘，但不会超出border */
+			/*-webkit-background-clip: padding-box;
+			-moz-background-clip: padding-box;
+			background-clip: padding-box;*/
+			/* border-box 是background-clip的默认值 */
+			/*-webkit-background-clip: border-box;
+			-moz-background-clip: border-box;
+			background-clip: border-box;*/
+			/* content-box 背景只在内容区绘制，不会超出padding和边框的范围 */
+			-webkit-background-clip: content-box;
+			-moz-background-clip: content-box;
+			background-clip: content-box;
+			-webkit-background-clip: padding-box;
+			-moz-background-clip: padding-box;
+			background-clip: padding-box;
+			-webkit-background-clip: border-box;
+			-moz-background-clip: border-box;
+			background-clip: border-box;
+		}
+		/* webkit内核下，还有个background-clip:text属性，用来制作背景图片填充文本效果,目前除了ie都支持了 */
+		.text{
+			font-size: 50px;
+			font-family: Microsoft Yahei;
+			font-weight: bold;
+			background-image: url(../img/2.png);
+			background-clip: text;
+			-o-background-clip: text;
+			-ms-background-clip: text;
+			-moz-background-clip: text;
+			-webkit-background-clip: text;
+			text-fill-color: transparent;
+			-o-text-fill-color: transparent;
+			-ms-text-fill-color: transparent;
+			-moz-text-fill-color: transparent;
+			-webkit-text-fill-color: transparent;
+		}
+		/*  */
+	</style>
+</head>
+<body>
+	background-attachment
+	<div class="div1"></div>
+	<div class="div2">background-origin</div>
+	<div class="text">制作背景图片填充文本的效果</div>
+</body>
+</html>
