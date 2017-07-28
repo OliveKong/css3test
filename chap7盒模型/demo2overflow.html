@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内容溢出</title>
+	<style type="text/css">
+		li{
+			width: 300px;
+			background: tan;
+			color: #000;
+			padding: 10px;
+			margin-bottom: 10px;
+			height: 32px;
+			line-height: 25px;
+		}
+		.overflow-visible{
+			overflow: visible;
+			/*默认值*/
+		}
+		.overflow-auto{
+			overflow: auto;
+		}
+		.overflow-hidden{
+			overflow: hidden;
+		}
+		.overflow-scroll{
+			overflow: scroll;
+		}
+		.overflow-no-display{
+			overflow-y: no-display;
+			/*这个属性貌似已经被取消*/
+		}
+		.overflow-no-content{
+			overflow: no-content;
+			/*这个属性貌似已经被取消*/
+		}
+		div{
+			background: brown;
+			padding: 10px;
+			outline: olive dotted 5px;
+		}
+		span{
+			outline: blue dotted 4px;
+			padding:5px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="overflow-visible">overflow-visible 默认显示左右的内容，默认显示左右的内容，</li>
+		<li class="overflow-auto">overflow-auto auto属性则是超出是就出现滚动轴，不超出不出现滚动轴</li>
+		<li class="overflow-hidden">overflow-hidden hidden：内容超出高度则隐藏掉</li>
+		<li class="overflow-scroll">overflow-scroll scroll不管内容多少，滚动轴一直存在</li>
+		<li class="overflow-no-display">overflow-no-display 内容若是超出高度，则该元素隐藏</li>
+		<li class="overflow-no-content">overflow-no-content no-content:内容若是超出元素高度，则内容隐藏，元素一直在</li>
+	</ul>
+	<div>sdaskdfjkasd
+		<span>asdasd</span>
+	</div>
+</body>
+</html>
