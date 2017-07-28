@@ -3,8 +3,109 @@
 <head>
 	<meta charset="UTF-8">
 	<title>文本</title>
+	<style type="text/css">
+	div{
+		padding:10px;
+	}
+		/*小型的大写字母字体small-caps,正常normal*/
+		.variant{
+			font-variant: small-caps;
+		}
+		/*字母的大写uppercase，小写lowercase，首字母大写capitalize,正常normal*/
+		.transform{
+			text-transform: uppercase;
+		}
+		.white-space{
+			/* nowrap 空白符合并，换行符忽略*/
+			white-space: nowrap;
+			/* pre 空白符、换行符保留*/
+			white-space: pre;
+			/* pre-wrap 空白符、换行符保留*/
+			white-space: pre-wrap;
+			/* pre-line 空白符合并，换行符保留 */
+			white-space: pre-line;
+		}
+		.direction{
+			/* 继承 */
+			direction: inherit;
+			/* 从左向右流入 */
+			direction:ltr;
+			/* 从右向左流入 */
+			direction:rtl;
+		}
+		/* 我自己定义的，解释文字的class .pre*/
+		.pre{
+			color: green;
+		}
+		.text-wrap{
+			width:600px;
+			padding:10px 0;
+			border:2px solid #ccc;
+			position: relative;
+			clear: both;
+			font-family: Airal,serif;
+			font-size: 40px;
+			text-align: center;
+			color: #f7edf7;
+			background: #665757;
+		}
+		.shadow1{
+			text-shadow: 0px 0px 0 rgb(188,178,188),1px 0px 0 rgb(173,163,173),2px 0px 0 rgb(157,147,157),3px 0px 0 rgb(142,132,142),4px 0px 0 rgb(126,116,126),5px 0px 0 rgb(111,101,111),6px 0px 0 rgb(96,85,95),7px 0px 0 rgb(79,69,79),8px 0px 7px rgba(0,0,0,0.35),8px 0 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+			filter:shadow(Color=#000,Direction=90,Strength=5);
+		}
+		.shadow2{
+			text-shadow:  0px 0px 0 rgb(188,178,188),1px -1px 0 rgb(173,163,173),2px -2px 0 rgb(157,147,157),3px -3px 0 rgb(142,132,142),4px -4px 0 rgb(126,116,126),5px -5px 0 rgb(111,101,111),6px -6px 0 rgb(96,85,95),7px -7px 0 rgb(79,69,79),8px -8px 7px rgba(0,0,0,0.35),8px -8px 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+		}
+		.shadow3{
+			text-shadow:  0px 0px 0 rgb(188,178,188),0px -1px 0 rgb(173,163,173),0px -2px 0 rgb(157,147,157),0px -3px 0 rgb(142,132,142),0px -4px 0 rgb(126,116,126),0px -5px 0 rgb(111,101,111),0px -6px 0 rgb(96,85,95),0px -7px 0 rgb(79,69,79),0px -8px 7px rgba(0,0,0,0.35),0px -8px 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+		}
+		.shadow4{
+			text-shadow:  0px 0px 0 rgb(188,178,188),-1px -1px 0 rgb(173,163,173),-2px -2px 0 rgb(157,147,157),-3px -3px 0 rgb(142,132,142),-4px -4px 0 rgb(126,116,126),-5px -5px 0 rgb(111,101,111),-6px -6px 0 rgb(96,85,95),-7px -7px 0 rgb(79,69,79),-8px -8px 7px rgba(0,0,0,0.35),-8px -8px 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+		}
+		.shadow5{
+			text-shadow: 0px 0px 0 rgb(188,178,188),-1px 0px 0 rgb(173,163,173),-2px 0px 0 rgb(157,147,157),-3px 0px 0 rgb(142,132,142),-4px 0px 0 rgb(126,116,126),-5px 0px 0 rgb(111,101,111),-6px 0px 0 rgb(96,85,95),-7px 0px 0 rgb(79,69,79),-8px 0px 7px rgba(0,0,0,0.35),-8px 0 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+		}
+		.shadow6{
+			text-shadow:  0px 0px 0 rgb(188,178,188),-1px 1px 0 rgb(173,163,173),-2px 2px 0 rgb(157,147,157),-3px 3px 0 rgb(142,132,142),-4px 4px 0 rgb(126,116,126),-5px 5px 0 rgb(111,101,111),-6px 6px 0 rgb(96,85,95),-7px 7px 0 rgb(79,69,79),-8px 8px 7px rgba(0,0,0,0.35),-8px 8px 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+		}
+		.shadow7{
+			text-shadow:  0px 0px 0 rgb(188,178,188),0px 1px 0 rgb(173,163,173),0px 2px 0 rgb(157,147,157),0px 3px 0 rgb(142,132,142),0px 4px 0 rgb(126,116,126),0px 5px 0 rgb(111,101,111),0px 6px 0 rgb(96,85,95),0px 7px 0 rgb(79,69,79),0px 8px 7px rgba(0,0,0,0.35),0px 8px 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+		}
+		.shadow8{
+			text-shadow:  0px 0px 0 rgb(188,178,188),1px 1px 0 rgb(173,163,173),2px 2px 0 rgb(157,147,157),3px 3px 0 rgb(142,132,142),4px 4px 0 rgb(126,116,126),5px 5px 0 rgb(111,101,111),6px 6px 0 rgb(96,85,95),7px 7px 0 rgb(79,69,79),8px 8px 7px rgba(0,0,0,0.35),8px 8px 1px rgba(0,0,0,0.5),0 0 7px rgba(0,0,0,0.2);
+		}
+		/**/
+	</style>
 </head>
 <body>
-	
+	<div class="variant">happy,小型的大写字母字体</div>
+	<div class="transform">happy,字母的大写</div>
+	<!-- 下面的地方,“定义”和“文字之间”后的空格是3个space空白键，而“间距”前面有一个enter换行符 -->
+	<div class="white-space">white-space:定义   文字之间   与文本之间的空白符
+	间距</div>
+
+	<div class="pre">因为改变的只是内联元素块的左右顺序，所有的文字，即使使用内联标签分隔，实际上，还是一个同质内联盒子，是当作一个整体处理的，因此，只有近似右对齐效果，而具体每个文字都没有左右顺序的变化。<br><br>
+	那什么是“内联元素块”呢？包括替换元素(replaced element)，如img, button, input, video, object等，或者inline-block水平的元素。因此，上面span1, span2的例子，只有任意一个span设置display:inline-block，都会看到左右顺序的变化。 </div>
+	<div class="direction">
+		<span>span1</span>
+		<span>span2</span>
+	</div>
+	<div class="direction">
+		<span>span标签在最前，然后边框图，最后小人儿图</span>
+		<img src="../img/border.png">
+		<img src="../img/filter.jpg">
+	</div>
+	<div class="pre">
+		ie9下不支持text-shadow,要用filter<br><br>
+		filter:shadow(Color=颜色值,Direction=数值,Strength=数值)。<br><br>Color用于设置阴影的颜色。<br><br>Direction用于设定投影的方向，取值为0度，则在文字的正上方，45度，则在文字右上角，90度，阴影在文字右方，135度，阴影在文字的右下方，180度，阴影在文字的正下方，225度，阴影在文字的左下角，270度，阴影在文字的左侧，315度，阴影在文字的左上角。<br><br>Strength就是阴影强度，类似于text-shadow的模糊半径。
+	</div>
+	<div class="text-wrap shadow1">文本阴影 text-shadow(0 deg)</div>
+	<div class="text-wrap shadow2">文本阴影 text-shadow(45 deg)</div>
+	<div class="text-wrap shadow3">文本阴影 text-shadow(90 deg)</div>
+	<div class="text-wrap shadow4">文本阴影 text-shadow(135 deg)</div>
+	<div class="text-wrap shadow5">文本阴影 text-shadow(180 deg)</div>
+	<div class="text-wrap shadow6">文本阴影 text-shadow(225 deg)</div>
+	<div class="text-wrap shadow7">文本阴影 text-shadow(270 deg)</div>
+	<div class="text-wrap shadow8">文本阴影 text-shadow(315 deg)</div>
 </body>
 </html>
