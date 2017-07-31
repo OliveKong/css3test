@@ -43,6 +43,20 @@
 			outline: blue dotted 4px;
 			padding:5px;
 		}
+		/*IE9*/
+		@media all and (min-width:0) {
+		    span{
+		        background: #fff;
+		        }
+		}
+
+		/*IE10+*/
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		    span{
+		        background: #0ff;
+		    }
+		}
+		/*  */
 	</style>
 </head>
 <body>
@@ -56,6 +70,7 @@
 	</ul>
 	<div>sdaskdfjkasd
 		<span>asdasd</span>
+		<!--  -->
 	</div>
 </body>
 </html>
