@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>display:flex display:inline-flex</title>
+	<style type="text/css">
+	*{margin:0;padding: 0;}
+		/*ie10+支持弹性布局*/
+		.flex{
+			width: 100%;
+			display: -webkit-inline-flex;
+			display: -moz-inline-flex;
+			display: -ms-inline-flex;
+			display: -o-inline-flex;
+			display: inline-flex;
+			/*竖着排列*/
+			/*-webkit-flex-direction: column;
+			-moz-flex-direction: column;
+			-ms-flex-direction: column;
+			-o-flex-direction: column;
+			flex-direction: column;*/
+			/*横着排列*/
+			-webkit-flex-direction: row;
+			-moz-flex-direction: row;
+			-ms-flex-direction: row;
+			-o-flex-direction: row;
+			flex-direction: row;
+			flex-wrap: wrap; /*flex-wrap:flex会换行*/
+			justify-pack:flex-start;
+		}
+		.flex-item{
+			-webkit-flex: 33.33%;
+			-moz-flex: 33.33%;
+			-ms-flex: 33.33%;
+			-o-flex: 33.33%;
+			flex: 33.33%;
+			height: 100px;
+			background: tan;
+			border: 5px solid #fff;
+			padding: 0 20px;
+			text-align: center;
+			line-height: 100px;
+			box-sizing: border-box;
+		}
+		/*  */
+		.box{
+			width: 500px;
+			border:1px solid red;
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-box;
+			display: -o-box;
+			display: box;
+			/*-webkit-box-orient: vertical;
+			-moz-box-orient: vertical;
+			-ms-box-orient: vertical;
+			box-orient: vertical;*/
+			-webkit-box-orient: inline-axis;
+			-moz-box-orient: inline-axis;
+			-ms-box-orient: inline-axis;
+			box-orient: inline-axis;
+			-webkit-box-direction: reverse;
+			-moz-box-direction: reverse;
+			-ms-box-direction: reverse;
+			box-direction: reverse;
+			-webkit-box-lines: multiple;
+			-ms-box-lines: multiple;
+			box-lines: multiple;
+		}
+		.box-item{
+			/*-webkit-box-flex: 2;
+			-moz-box-flex: 2;
+			-ms-box-flex: 2;
+			box-flex: 2;*/
+			height: 100px;
+			background: tan;
+			border: 5px solid #fff;
+			padding: 0 20px;
+			text-align: center;
+			line-height: 100px;
+			box-sizing: border-box;
+		}
+		/*  */
+	</style>
+</head>
+<body>
+	<div class="flex">
+		<div class="flex-item">33.33%</div>
+		<div class="flex-item">33.33%</div>
+		<div class="flex-item">33.33%</div>
+		<div class="flex-item">33.33%</div>
+		<div class="flex-item">33.33%</div>
+		<div class="flex-item">33.33%</div>
+		<div class="flex-item">33.33%</div>
+		<div class="flex-item">33.33%</div>
+	</div>
+	<div class="box">
+		<div class="box-item">1 33.33%</div>
+		<div class="box-item">2 33.33%</div>
+		<div class="box-item">3 33.33%</div>
+		<div class="box-item">4 33.33%</div>
+		<div class="box-item">5 33.33%</div>
+		<div class="box-item">6 33.33%</div>
+		<div class="box-item">7 33.33%</div>
+		<div class="box-item">8 33.33%</div>
+	</div>
+</body>
+</html>
